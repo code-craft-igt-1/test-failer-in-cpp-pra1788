@@ -1,7 +1,7 @@
+#include <cassert>
+#include <iostream>
 #include "./misaligned.h"
 #include "./color_map.h"
-#include <iostream>
-#include <cassert>
 
 // Unit tests
 void testColorMaps() {
