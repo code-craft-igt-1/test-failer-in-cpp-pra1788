@@ -19,9 +19,9 @@ std::vector<std::pair<std::string, std::string>> generateColorMap() {
 
 // alignment color mappings printer
 void printColorMap(const std::vector<std::pair<std::string, std::string>>& colorMap) {
-    const int indexWidth = 5;       // Width for the index column
-    const int majorColorWidth = 11; // Width for the major color column
-    const int minorColorWidth = 8;  // Width for the minor color column
+    const int indexWidth = 5;        // Width for the index column
+    const int majorColorWidth = 11;  // Width for the major color column
+    const int minorColorWidth = 8;   // Width for the minor color column
 
     std::cout << std::setw(indexWidth) << "Index" << " | "
               << std::setw(majorColorWidth) << "Major Color" << " | "
