@@ -9,8 +9,8 @@ std::vector<std::pair<std::string, std::string>> generateColorMap() {
     const std::vector<std::string> minorColor = {"Blue", "Orange", "Green", "Brown", "Slate"};
     std::vector<std::pair<std::string, std::string>> colorMap;
 
-    for (int i = 0; i < majorColor.size(); ++i) {
-        for (int j = 0; j < minorColor.size(); ++j) {
+    for (auto i = 0; i < majorColor.size(); ++i) {
+        for (auto j = 0; j < minorColor.size(); ++j) {
             colorMap.emplace_back(majorColor[i], minorColor[j]);
         }
     }
@@ -28,7 +28,7 @@ void printColorMap(const std::vector<std::pair<std::string, std::string>>& color
               << std::setw(minorColorWidth) << "Minor Color" << "\n";
     std::cout << std::string(indexWidth + majorColorWidth + minorColorWidth + 9, '-') << "\n";
 
-    for (int i = 0; i < colorMap.size(); ++i) {
+    for (auto i = 0; i < colorMap.size(); ++i) {
         std::cout << std::setw(indexWidth) << i+1 << " | "
                   << std::setw(majorColorWidth) << colorMap[i].first << " | "
                   << std::setw(minorColorWidth) << colorMap[i].second << "\n";
