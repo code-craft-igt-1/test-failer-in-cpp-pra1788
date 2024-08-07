@@ -22,7 +22,7 @@ std::string formatColorMap(const std::vector<std::string>& majorColors,
         for (size_t j = 0; j < minorColors.size(); ++j) {
             oss << std::setw(maxIndexWidth) << (i * minorColors.size() + j) << " | "
                 << std::setw(10) << std::left << majorColors[i] << " | "
-                << std::setw(10) << std::left << minorColors[j] << "\n";
+                << std::setw(10) << std::left << minorColors[i] << "\n";
         }
     }
 
