@@ -1,15 +1,14 @@
-#include "color_map.h"
+#include "./color_map.h"
 #include <iostream>
 #include <cassert>
+#include "./misaligned.h"
 
 // Unit tests
 void testColorMaps() {
     auto majorColors = getMajorColors();
     auto minorColors = getMinorColors();
-    
     assert(majorColors.size() == 5);
     assert(minorColors.size() == 5);
-    
     assert(majorColors[0] == "White");
     assert(minorColors[4] == "Slate");
 }
@@ -18,7 +17,6 @@ void testFormatColorMap() {
     auto majorColors = getMajorColors();
     auto minorColors = getMinorColors();
     std::string formattedOutput = formatColorMap(majorColors, minorColors);
-
     std::string expectedOutput =
         " 0 | White     | Blue      \n"
         " 1 | White     | Orange    \n"
@@ -45,21 +43,16 @@ void testFormatColorMap() {
         "22 | Violet    | Green     \n"
         "23 | Violet    | Brown     \n"
         "24 | Violet    | Slate     \n";
-    
     assert(formattedOutput == expectedOutput);
 }
 
 int main() {
     testColorMaps();
     testFormatColorMap();
-    
     auto majorColors = getMajorColors();
     auto minorColors = getMinorColors();
     std::string formattedOutput = formatColorMap(majorColors, minorColors);
-    
     printColorMap(formattedOutput);
-
     std::cout << "All tests passed.\n";
     return 0;
 }
-

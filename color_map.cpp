@@ -1,4 +1,4 @@
-#include "color_map.h"
+#include "./color_map.h"
 #include <iostream>
 #include <sstream>
 #include <iomanip>
@@ -13,7 +13,8 @@ std::vector<std::string> getMinorColors() {
 }
 
 // Format the color map
-std::string formatColorMap(const std::vector<std::string>& majorColors, const std::vector<std::string>& minorColors) {
+std::string formatColorMap(const std::vector<std::string>& majorColors,
+                                    const std::vector<std::string>& minorColors) {
     std::ostringstream oss;
     int maxIndexWidth = 2;  // Maximum width for index values
 
