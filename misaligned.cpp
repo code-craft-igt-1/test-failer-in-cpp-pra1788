@@ -1,5 +1,5 @@
-#include "./color_map.h"
 #include "./misaligned.h"
+#include "./color_map.h"
 #include <iostream>
 #include <cassert>
 
