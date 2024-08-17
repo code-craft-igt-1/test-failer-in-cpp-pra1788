@@ -48,8 +48,7 @@ void testFormatColorMap() {
     std::cout << "Generated Output:\n" << formattedOutput << "\n";
     std::cout << "Expected Output:\n" << expectedOutput << "\n";
 
-    assert(formattedOutput == expectedOutput &&
-                        "Formatted output does not match the expected output");
+    assert(formattedOutput == expectedOutput && "Formatted and Expected output does not match");
 }
 
 
