@@ -1,4 +1,4 @@
-#include "./WeatherReport.h"
+#include "WeatherReport.h"
 
 namespace WeatherSpace {
 
