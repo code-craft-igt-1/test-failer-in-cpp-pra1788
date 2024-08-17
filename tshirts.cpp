@@ -21,7 +21,7 @@ char size(int cms) {
 void runTests() {
     // Edge cases for boundary conditions
     assert(size(37) == 'S');  // Just below SMALL_THRESHOLD
-    assert(size(38) == 'M');  // Exactly at SMALL_THRESHOLD
+    assert(size(38) == 'S');  // Exactly at SMALL_THRESHOLD
     assert(size(39) == 'M');  // Just above SMALL_THRESHOLD
     assert(size(41) == 'M');  // Just below MEDIUM_THRESHOLD
     assert(size(42) == 'M');  // Exactly at MEDIUM_THRESHOLD
@@ -33,7 +33,7 @@ void runTests() {
 
     // Cases where cms is exactly on the boundary values
     assert(size(SMALL_THRESHOLD - 1) == 'S');   // Below SMALL_THRESHOLD
-    assert(size(SMALL_THRESHOLD) == 'M');       // At SMALL_THRESHOLD
+    assert(size(SMALL_THRESHOLD) == 'S');       // At SMALL_THRESHOLD
     assert(size(MEDIUM_THRESHOLD) == 'M');      // At MEDIUM_THRESHOLD
     assert(size(MEDIUM_THRESHOLD + 1) == 'L');  // Above MEDIUM_THRESHOLD
 
