@@ -1,5 +1,6 @@
 #include <cassert>
 #include <iostream>
+#include <string>
 #include "SensorStub.h"
 #include "WeatherReport.h"
 #include "weatherreportTests.h"
