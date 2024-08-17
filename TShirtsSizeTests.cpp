@@ -1,22 +1,7 @@
-#include <assert.h>
+#include <cassert>
 #include <iostream>
-
-// size thresholds as constants
-const int SMALL_THRESHOLD = 38;
-const int MEDIUM_THRESHOLD = 42;
-
-char size(int cms) {
-    char sizeName = '\0';
-    if (cms <= 38) {
-        sizeName = 'S';
-    } else if (cms > 38 && cms <= 42) {
-        sizeName = 'M';
-    } else if (cms > 42) {
-        sizeName = 'L';
-    }
-    return sizeName;
-}
-
+#include "./TShirtsSizeCalculator.h"
+#include "./TShirtsSizeTests.h"
 
 void runTests() {
     // Edge cases for boundary conditions
@@ -38,10 +23,5 @@ void runTests() {
     assert(size(MEDIUM_THRESHOLD + 1) == 'L');  // Above MEDIUM_THRESHOLD
 
     // Print message if all assertions pass
-    std::cout << "All tests passed successfully.\n";
-}
-
-int main() {
-    runTests();
-    return 0;
+    std::cout << "All T-Shirts size tests passed successfully.\n";
 }
