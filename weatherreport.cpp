@@ -2,83 +2,109 @@
 #include <string>
 #include <iostream>
 
-using std::cout, std::endl, std::string;
+using std::cout;
+using std::endl;
+using std::string;
 
 namespace WeatherSpace {
+
 class IWeatherSensor {
- public:
-        virtual double TemperatureInC() const = 0;
-        virtual int Precipitation() const = 0;
-        virtual int Humidity() const = 0;
-        virtual int WindSpeedKMPH() const = 0;
+public:
+    virtual double TemperatureInC() const = 0;
+    virtual int Precipitation() const = 0;
+    virtual int Humidity() const = 0;
+    virtual int WindSpeedKMPH() const = 0;
+    virtual ~IWeatherSensor() = default;
 };
 
-/// This is a stub for a weather sensor. For the sake of testing
-/// we create a stub that generates weather data and allows us to
-/// test the other parts of this application in isolation
-/// without needing the actual Sensor during development
-
 class SensorStub : public IWeatherSensor {
-    int Humidity() const override {
-        return 72;
+public:
+    SensorStub(double temperature, int precipitation, int humidity, int windSpeed)
+        : temperature_(temperature), precipitation_(precipitation),
+          humidity_(humidity), windSpeed_(windSpeed) {}
+
+    double TemperatureInC() const override {
+        return temperature_;
     }
 
     int Precipitation() const override {
-        return 70;
+        return precipitation_;
     }
 
-    double TemperatureInC() const override {
-        return 26;
+    int Humidity() const override {
+        return humidity_;
     }
 
     int WindSpeedKMPH() const override {
-        return 52;
+        return windSpeed_;
     }
-};
 
-// This is a function to predict the weather, based on readings
-// from a sensor
+private:
+    double temperature_;
+    int precipitation_;
+    int humidity_;
+    int windSpeed_;
+};
 
 string Report(const IWeatherSensor& sensor) {
     int precipitation = sensor.Precipitation();
-    // precipitation < 20 is a sunny day
-    string report = "Sunny day";
+    int windSpeed = sensor.WindSpeedKMPH();
+    double temperature = sensor.TemperatureInC();
 
-    if (sensor.TemperatureInC() > 25) {
-        if (precipitation >= 20 && precipitation < 60)
-            report = "Partly cloudy";
-        else if (sensor.WindSpeedKMPH() > 50)
-            report = "Alert, Stormy with heavy rain";
+    if (temperature > 25) {
+        if (precipitation >= 60) {
+            if (windSpeed > 50) {
+                return "Alert, Stormy with heavy rain";
+            } else {
+                return "Rainy day";
+            }
+        } else if (precipitation >= 20) {
+            return "Partly cloudy";
+        }
     }
-    return report;
+
+    return "Sunny day";
 }
 
-// Test a rainy day
-
-void TestRainy() {
-    SensorStub sensor;
+// Test case for stormy weather conditions
+void TestStormy() {
+    SensorStub sensor(26, 70, 72, 52);
     string report = Report(sensor);
-    cout << report << endl;
-    assert(report.find("rain") != string::npos);
+    cout << "TestStormy: " << report << endl;
+    assert(report == "Alert, Stormy with heavy rain");
 }
 
-// Test another rainy day
-
+// Test case for rainy day with high precipitation and low wind speed
 void TestHighPrecipitationAndLowWindspeed() {
-    // This instance of stub needs to be different-
-    // to give high precipitation (>60) and low wind-speed (<50)
-    SensorStub sensor;
-
-    // strengthen the assert to expose the bug
-    // (function returns Sunny day, it should predict rain)
+    SensorStub sensor(26, 70, 72, 30);
     string report = Report(sensor);
-    assert(report.length() > 0);
+    cout << "TestHighPrecipitationAndLowWindspeed: " << report << endl;
+    assert(report == "Rainy day");
 }
+
+// Test case for partly cloudy day
+void TestPartlyCloudy() {
+    SensorStub sensor(26, 30, 72, 10);
+    string report = Report(sensor);
+    cout << "TestPartlyCloudy: " << report << endl;
+    assert(report == "Partly cloudy");
+}
+
+// Test case for a sunny day
+void TestSunnyDay() {
+    SensorStub sensor(24, 10, 50, 20);
+    string report = Report(sensor);
+    cout << "TestSunnyDay: " << report << endl;
+    assert(report == "Sunny day");
+}
+
 }  // namespace WeatherSpace
 
 int main() {
-    WeatherSpace::TestRainy();
+    WeatherSpace::TestStormy();
     WeatherSpace::TestHighPrecipitationAndLowWindspeed();
-    cout << "All is well (maybe)\n";
+    WeatherSpace::TestPartlyCloudy();
+    WeatherSpace::TestSunnyDay();
+    cout << "All tests passed successfully.\n";
     return 0;
 }
