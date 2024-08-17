@@ -9,41 +9,41 @@ using std::string;
 namespace WeatherSpace {
 
 class IWeatherSensor {
-    public:
-        virtual double TemperatureInC() const = 0;
-        virtual int Precipitation() const = 0;
-        virtual int Humidity() const = 0;
-        virtual int WindSpeedKMPH() const = 0;
-        virtual ~IWeatherSensor() = default;
+ public:
+    virtual double TemperatureInC() const = 0;
+    virtual int Precipitation() const = 0;
+    virtual int Humidity() const = 0;
+    virtual int WindSpeedKMPH() const = 0;
+    virtual ~IWeatherSensor() = default;
 };
 
 class SensorStub : public IWeatherSensor {
-    public:
-        SensorStub(double temperature, int precipitation, int humidity, int windSpeed)
-            : temperature_(temperature), precipitation_(precipitation),
-            humidity_(humidity), windSpeed_(windSpeed) {}
+ public:
+    SensorStub(double temperature, int precipitation, int humidity, int windSpeed)
+        : temperature_(temperature), precipitation_(precipitation),
+          humidity_(humidity), windSpeed_(windSpeed) {}
 
-        double TemperatureInC() const override {
-            return temperature_;
-        }
+    double TemperatureInC() const override {
+        return temperature_;
+    }
 
-        int Precipitation() const override {
-            return precipitation_;
-        }
+    int Precipitation() const override {
+        return precipitation_;
+    }
 
-        int Humidity() const override {
-            return humidity_;
-        }
+    int Humidity() const override {
+        return humidity_;
+    }
 
-        int WindSpeedKMPH() const override {
-            return windSpeed_;
-        }
+    int WindSpeedKMPH() const override {
+        return windSpeed_;
+    }
 
-    private:
-        double temperature_;
-        int precipitation_;
-        int humidity_;
-        int windSpeed_;
+ private:
+    double temperature_;
+    int precipitation_;
+    int humidity_;
+    int windSpeed_;
 };
 
 string Report(const IWeatherSensor& sensor) {
