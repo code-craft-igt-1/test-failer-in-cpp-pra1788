@@ -3,7 +3,7 @@
 #include <string>
 #include "./SensorStub.h"
 #include "./WeatherReport.h"
-#include "WeatherReportTests.h"
+#include "./weatherreportTests.h"
 
 using std::cout;
 using std::endl;
