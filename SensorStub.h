@@ -1,7 +1,7 @@
 #ifndef SENSORSTUB_H
 #define SENSORSTUB_H
 
-#include "IWeatherSensor.h"
+#include "./IWeatherSensor.h"
 
 namespace WeatherSpace {
 

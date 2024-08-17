@@ -1,9 +1,9 @@
 #include <cassert>
 #include <iostream>
 #include <string>
-#include "SensorStub.h"
-#include "WeatherReport.h"
-#include "weatherreportTests.h"
+#include "./SensorStub.h"
+#include "./weatherreport.h"
+#include "./weatherreportTests.h"
 
 using std::cout;
 using std::endl;

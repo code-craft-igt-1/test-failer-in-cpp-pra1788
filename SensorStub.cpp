@@ -1,4 +1,4 @@
-#include "SensorStub.h"
+#include "./SensorStub.h"
 
 namespace WeatherSpace {
 

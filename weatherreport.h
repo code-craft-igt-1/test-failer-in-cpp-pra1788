@@ -2,7 +2,7 @@
 #define WEATHERREPORT_H
 
 #include <string>
-#include "IWeatherSensor.h"
+#include "./IWeatherSensor.h"
 
 namespace WeatherSpace {
 
