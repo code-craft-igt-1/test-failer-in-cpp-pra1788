@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 #include "./SensorStub.h"
-#include "./weatherreport.h"
-#include "./weatherreportTests.h"
+#include "./WeatherReport.h"
+#include "./WeatherReportTests.h"
 
 using std::cout;
 using std::endl;
