@@ -1,7 +1,7 @@
 #include <cassert>
 #include <iostream>
-#include "./color_map_alignmentTest.h"
-#include "./color_map.h"
+#include "./ColorMapAlignmentTest.h"
+#include "./ColorMap.h"
 
 // Unit tests
 void testColorMaps() {

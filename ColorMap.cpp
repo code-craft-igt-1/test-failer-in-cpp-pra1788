@@ -1,4 +1,4 @@
-#include "./color_map.h"
+#include "./ColorMap.h"
 #include <iostream>
 #include <sstream>
 #include <iomanip>
