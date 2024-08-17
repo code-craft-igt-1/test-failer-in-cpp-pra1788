@@ -1,5 +1,5 @@
 #include <iostream>
-#include "./WeatherReportTests.h"  // Including the test definitions
+#include "./weatherreportTests.h"  // Including the test definitions
 
 int main() {
     WeatherSpace::TestStormy();

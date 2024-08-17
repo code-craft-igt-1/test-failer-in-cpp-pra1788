@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "./SensorStub.h"
-#include "./WeatherReport.h"
+#include "./weatherreport.h"
 #include "./weatherreportTests.h"
 
 using std::cout;
