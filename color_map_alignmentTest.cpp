@@ -1,6 +1,6 @@
 #include <cassert>
 #include <iostream>
-#include "./misaligned.h"
+#include "./color_map_alignmentTest.h"
 #include "./color_map.h"
 
 // Unit tests
@@ -50,7 +50,6 @@ void testFormatColorMap() {
 
     assert(formattedOutput == expectedOutput && "Formatted and Expected output does not match");
 }
-
 
 int main() {
     testColorMaps();

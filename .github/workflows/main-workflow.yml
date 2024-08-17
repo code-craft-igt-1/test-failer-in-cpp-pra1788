@@ -21,9 +21,9 @@ jobs:
 
     - name: misaligned fail
       run: |
-        g++ -Wall -Wextra -Werror misaligned.cpp color_map.cpp -o misaligned.out
+        g++ -Wall -Wextra -Werror color_map_alignmentTest.cpp color_map.cpp -o color_map_alignmentTest.out
         # bash .github/workflows/expectfail.sh 
-        ./misaligned.out
+        ./color_map_alignmentTest.out
 
     - name: alerter fail
       run: |

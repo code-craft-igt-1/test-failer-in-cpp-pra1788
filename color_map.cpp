@@ -32,12 +32,20 @@ std::string formatColorMap(const std::vector<std::string>& majorColors,
 
     for (size_t i = 0; i < majorColors.size(); ++i) {
         for (size_t j = 0; j < minorColors.size(); ++j) {
-            oss << std::setw(maxIndexWidth) << std::right << (i * minorColors.size() + j) << " | "
-                << std::setw(9) << std::left << majorColors[i] << " | "
-                << std::setw(10) << std::left << minorColors[j] << "\n";
+            oss INSERT_STREAM(SET_WIDTH(maxIndexWidth)) 
+                INSERT_STREAM(ALIGN_RIGHT) 
+                INSERT_STREAM(i * minorColors.size() + j) 
+                INSERT_STREAM(" | ") 
+                INSERT_STREAM(SET_WIDTH(9)) 
+                INSERT_STREAM(ALIGN_LEFT) 
+                INSERT_STREAM(majorColors[i]) 
+                INSERT_STREAM(" | ") 
+                INSERT_STREAM(SET_WIDTH(10)) 
+                INSERT_STREAM(ALIGN_LEFT) 
+                INSERT_STREAM(minorColors[j]) 
+                INSERT_STREAM("\n");
         }
     }
-
     return oss.str();
 }
 

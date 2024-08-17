@@ -4,6 +4,12 @@
 #include <string>
 #include <vector>
 
+// Macros for printing and formating the table
+#define SET_WIDTH(width) std::setw(width)
+#define ALIGN_RIGHT std::right
+#define ALIGN_LEFT std::left
+#define INSERT_STREAM(value) << (value)
+
 // Functions for preparing color maps
 std::vector<std::string> getMajorColors();
 std::vector<std::string> getMinorColors();
