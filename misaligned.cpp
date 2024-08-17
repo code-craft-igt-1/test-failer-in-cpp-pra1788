@@ -17,6 +17,7 @@ void testFormatColorMap() {
     auto majorColors = getMajorColors();
     auto minorColors = getMinorColors();
     std::string formattedOutput = formatColorMap(majorColors, minorColors);
+
     std::string expectedOutput =
         " 0 | White     | Blue      \n"
         " 1 | White     | Orange    \n"
@@ -43,8 +44,13 @@ void testFormatColorMap() {
         "22 | Violet    | Green     \n"
         "23 | Violet    | Brown     \n"
         "24 | Violet    | Slate     \n";
-    assert(formattedOutput == expectedOutput);
+
+    std::cout << "Generated Output:\n" << formattedOutput << "\n";
+    std::cout << "Expected Output:\n" << expectedOutput << "\n";
+
+    assert(formattedOutput == expectedOutput && "Formatted output does not match the expected output");
 }
+
 
 int main() {
     testColorMaps();
