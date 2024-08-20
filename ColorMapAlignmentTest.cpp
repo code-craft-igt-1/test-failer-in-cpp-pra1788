@@ -1,9 +1,8 @@
 #include <cassert>
 #include <iostream>
-#include "./ColorMapAlignmentTest.h"
-#include "./ColorMap.h"
+#include "ColorMapAlignmentTest.h"
+#include "ColorMap.h"
 
-// Unit tests
 void testColorMaps() {
     auto majorColors = getMajorColors();
     auto minorColors = getMinorColors();

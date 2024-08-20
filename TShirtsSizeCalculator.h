@@ -6,6 +6,6 @@ const int SMALL_THRESHOLD = 38;
 const int MEDIUM_THRESHOLD = 42;
 
 // Function to determine size based on cms
-char size(int cms);
+char size_in_cms(int cms);
 
 #endif  // TSHIRTS_SIZE_CALCULATOR_H

@@ -1,6 +1,6 @@
 #include "./TShirtsSizeCalculator.h"
 
-char size(int cms) {
+char size_in_cms(int cms) {
     char sizeName = '\0';
     if (cms <= SMALL_THRESHOLD) {
         sizeName = 'S';
