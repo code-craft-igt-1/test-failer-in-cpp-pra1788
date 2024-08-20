@@ -1,5 +1,6 @@
 #include <cassert>
 #include <iostream>
+#include <string>
 #include "ColorMapAlignmentTest.h"
 #include "ColorMap.h"
 
