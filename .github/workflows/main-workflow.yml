@@ -16,17 +16,14 @@ jobs:
     - name: tshirts fail
       run: |
         g++ -Wall -Wextra -Werror TShirtsSizeCalculator.cpp TShirtsSizeMain.cpp TShirtsSizeTests.cpp -o tshirts.out
-        # bash .github/workflows/expectfail.sh 
         ./tshirts.out
 
     - name: misaligned fail
       run: |
         g++ -Wall -Wextra -Werror ColorMapAlignmentTest.cpp ColorMap.cpp -o ColorMapAlignmentTest.out
-        # bash .github/workflows/expectfail.sh 
         ./ColorMapAlignmentTest.out
 
     - name: alerter fail
       run: |
         g++ -Wall -Wextra -Werror weatherreport.cpp weatherreportMain.cpp weatherreportTests.cpp SensorStub.cpp -o weatherreport.out
-        # bash .github/workflows/expectfail.sh 
         ./weatherreport.out
